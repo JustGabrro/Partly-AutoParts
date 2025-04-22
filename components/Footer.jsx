@@ -24,13 +24,10 @@ const Footer = () => {
                 <a className="hover:underline transition" href="#">Home</a>
               </li>
               <li>
-                <a className="hover:underline transition" href="#">About us</a>
-              </li>
-              <li>
                 <a className="hover:underline transition" href="#">Contact us</a>
               </li>
               <li>
-                <a className="hover:underline transition" href="#">Privacy policy</a>
+                <a className="hover:underline transition" href="https://www.freeprivacypolicy.com/live/5aba3ff0-f895-4ea9-8ea2-7aef96f79a59">Privacy policy</a>
               </li>
             </ul>
           </div>
