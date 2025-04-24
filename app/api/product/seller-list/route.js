@@ -12,7 +12,7 @@ export async function GET(request) {
         const isSeller = authSeller(userId)
 
         if (!isSeller) {
-            return NextResponse.json({ success: false, message: 'not authorized' });
+            return NextResponse.json({ success: false, message: 'თქვენ არ ხართ ავტორიზებული' });
         }
 
         await connectDB()

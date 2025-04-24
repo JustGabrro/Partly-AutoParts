@@ -13,7 +13,9 @@ export const useAppContext = () => {
 
 export const AppContextProvider = (props) => {
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY
+    // const currency = process.env.NEXT_PUBLIC_CURRENCY
+    const [currency, setCurrency] = useState("₾");
+
     const router = useRouter()
 
     const { user } = useUser()
@@ -66,7 +68,7 @@ export const AppContextProvider = (props) => {
     const addToCart = async (itemId) => {
 
         if (!user) {
-            return toast('Please login',{
+            return toast('გთხოვთ, გაიაროთ ავტორიზაცია',{
                 icon: '⚠️',
               })
         }
@@ -83,7 +85,7 @@ export const AppContextProvider = (props) => {
             try {
                 const token = await getToken()
                 await axios.post('/api/cart/update', {cartData}, {headers:{Authorization: `Bearer ${token}`}} )
-                toast.success('Item added to cart')
+                toast.success('პროდუქტი დამატებულია კალათაში')
             } catch (error) {
                 toast.error(error.message)
             }
@@ -103,7 +105,7 @@ export const AppContextProvider = (props) => {
             try {
                 const token = await getToken()
                 await axios.post('/api/cart/update', {cartData}, {headers:{Authorization: `Bearer ${token}`}} )
-                toast.success('Cart Updated')
+                toast.success('კალათა განახლებულია')
             } catch (error) {
                 toast.error(error.message)
             }
@@ -124,7 +126,7 @@ export const AppContextProvider = (props) => {
         let totalAmount = 0;
         for (const items in cartItems) {
             let itemInfo = products.find((product) => product._id === items);
-            if (cartItems[items] > 0) {
+            if (itemInfo && cartItems[items] > 0) {
                 totalAmount += itemInfo.offerPrice * cartItems[items];
             }
         }

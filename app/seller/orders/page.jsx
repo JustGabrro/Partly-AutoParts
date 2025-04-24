@@ -46,7 +46,7 @@ const Orders = () => {
     return (
         <div className="flex-1 h-screen overflow-scroll flex flex-col justify-between text-sm">
             {loading ? <Loading /> : <div className="md:p-10 p-4 space-y-5">
-                <h2 className="text-lg font-medium">Orders</h2>
+                <h2 className="text-lg font-medium">შეკვეთები</h2>
                 <div className="max-w-4xl rounded-md">
                     {orders.map((order, index) => (
                         <div key={index} className="flex flex-col md:flex-row gap-5 justify-between p-5 border-t border-gray-300">
@@ -60,7 +60,7 @@ const Orders = () => {
                                     <span className="font-medium">
                                         {order.items.map((item) => item.product.name + ` x ${item.quantity}`).join(", ")}
                                     </span>
-                                    <span>Items : {order.items.length}</span>
+                                    <span>ნივთი : {order.items.length}</span>
                                 </p>
                             </div>
                             <div>
@@ -77,9 +77,9 @@ const Orders = () => {
                             <p className="font-medium my-auto">{currency}{order.amount}</p>
                             <div>
                                 <p className="flex flex-col">
-                                    <span>Method : COD</span>
-                                    <span>Date : {new Date(order.date).toLocaleDateString()}</span>
-                                    <span>Payment : Pending</span>
+                                    <span>გადახდის მეთოდი : COD</span>
+                                    <span>თარიღი : {new Date(order.date).toLocaleDateString()}</span>
+                                    <span>გადახდა : დაუმთავრებელი</span>
                                 </p>
                             </div>
                         </div>

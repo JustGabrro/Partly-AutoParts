@@ -6,26 +6,26 @@ const HeaderSlider = () => {
   const sliderData = [
     {
       id: 1,
-      title: "Experience Pure Sound - Your Perfect Headphones Awaits!",
-      offer: "Limited Time Offer 30% Off",
-      buttonText1: "Buy now",
-      buttonText2: "Find more",
+      title: "ყველაფერი თქვენს ავტომობილზე — ნაწილები და აქსესუარები",
+      offer: "დაბალი ფასები",
+      buttonText1: "საუკეთესო არჩევანი",
+      buttonText2: "",
       imgSrc: assets.header_headphone_image,
     },
     {
       id: 2,
-      title: "Next-Level Gaming Starts Here - Discover PlayStation 5 Today!",
-      offer: "Hurry up only few lefts!",
-      buttonText1: "Shop Now",
-      buttonText2: "Explore Deals",
+      title: "გაანახლეთ თქვენი ავტომობილი — ხარისხიანი ნაწილები და აქსესუარები ერთ სივრცეში",
+      offer: "დაბალი ფასები",
+      buttonText1: "საუკეთესო არჩევანი",
+      buttonText2: "",
       imgSrc: assets.header_playstation_image,
     },
     {
       id: 3,
-      title: "Power Meets Elegance - Apple MacBook Pro is Here for you!",
-      offer: "Exclusive Deal 40% Off",
-      buttonText1: "Order Now",
-      buttonText2: "Learn More",
+      title: "მხოლოდ სანდო ბრენდები და უმაღლესი ხარისხი — თქვენი ავტომობილის საუკეთესო კომპანიონი.",
+      offer: "დაბალი ფასები",
+      buttonText1: "საუკეთესო არჩევანი",
+      buttonText2: "",
       imgSrc: assets.header_macbook_image,
     },
   ];
@@ -57,12 +57,14 @@ const HeaderSlider = () => {
             className="flex flex-col-reverse md:flex-row items-center justify-between bg-[#E6E9F2] py-8 md:px-14 px-5 mt-6 rounded-xl min-w-full"
           >
             <div className="md:pl-8 mt-10 md:mt-0">
-              <p className="md:text-base text-orange-600 pb-1">{slide.offer}</p>
+              <p className="">{slide.offer}</p>
+              {/* md:text-base text-orange-600 pb-1 */}
               <h1 className="max-w-lg md:text-[40px] md:leading-[48px] text-2xl font-semibold">
                 {slide.title}
               </h1>
               <div className="flex items-center mt-4 md:mt-6 ">
-                <button className="md:px-10 px-7 md:py-2.5 py-2 bg-orange-600 rounded-full text-white font-medium">
+                <button className="">
+                  {/* md:px-10 px-7 md:py-2.5 py-2 bg-orange-600 rounded-full text-white font-medium */}
                   {slide.buttonText1}
                 </button>
                 <button className="group flex items-center gap-2 px-6 py-2.5 font-medium">

@@ -14,7 +14,7 @@ export async function GET(request) {
         const isSeller = await authSeller(userId)
 
         if (!isSeller) {
-            return NextResponse.json({ success: false, message: 'not authorized' })
+            return NextResponse.json({ success: false, message: 'თქვენ არ ხართ ავტორიზებული' })
         }
 
         await connectDB()

@@ -22,7 +22,7 @@ export async function POST(request) {
         const isSeller = await authSeller(userId)
 
         if (!isSeller) {
-            return NextResponse.json({ success: false, message: 'not authorized' })
+            return NextResponse.json({ success: false, message: 'თქვენ არ ხართ ავტორიზებული' })
         }
 
         const formData = await request.formData()
@@ -36,7 +36,7 @@ export async function POST(request) {
         const files = formData.getAll('images');
 
         if (!files || files.length === 0) {
-            return NextResponse.json({ success: false, message: 'no files uploaded' })
+            return NextResponse.json({ success: false, message: 'ფაილი არ ატვირთულა' })
         }
 
         const result = await Promise.all(
@@ -74,7 +74,7 @@ export async function POST(request) {
             date: Date.now()
         })
 
-        return NextResponse.json({ success: true, message: 'Upload successful', newProduct })
+        return NextResponse.json({ success: true, message: 'ატვირთვა წარმატებულია', newProduct })
 
 
     } catch (error) {

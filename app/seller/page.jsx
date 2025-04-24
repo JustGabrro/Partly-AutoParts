@@ -13,7 +13,7 @@ const AddProduct = () => {
   const [files, setFiles] = useState([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('Earphone');
+  const [category, setCategory] = useState('ავტო ნაწილი');
   const [price, setPrice] = useState('');
   const [offerPrice, setOfferPrice] = useState('');
 
@@ -43,7 +43,7 @@ const AddProduct = () => {
         setFiles([]);
         setName('');
         setDescription('');
-        setCategory('Earphone');
+        setCategory('ავტო ნაწილი');
         setPrice('');
         setOfferPrice('');
       } else {
@@ -62,7 +62,7 @@ const AddProduct = () => {
     <div className="flex-1 min-h-screen flex flex-col justify-between">
       <form onSubmit={handleSubmit} className="md:p-10 p-4 space-y-5 max-w-lg">
         <div>
-          <p className="text-base font-medium">Product Image</p>
+          <p className="text-base font-medium">პროდუქტის სურათი</p>
           <div className="flex flex-wrap items-center gap-3 mt-2">
 
             {[...Array(4)].map((_, index) => (
@@ -87,7 +87,7 @@ const AddProduct = () => {
         </div>
         <div className="flex flex-col gap-1 max-w-md">
           <label className="text-base font-medium" htmlFor="product-name">
-            Product Name
+            პროდუქტის სახელი
           </label>
           <input
             id="product-name"
@@ -104,7 +104,7 @@ const AddProduct = () => {
             className="text-base font-medium"
             htmlFor="product-description"
           >
-            Product Description
+            პროდუქტის აღწერა
           </label>
           <textarea
             id="product-description"
@@ -119,7 +119,7 @@ const AddProduct = () => {
         <div className="flex items-center gap-5 flex-wrap">
           <div className="flex flex-col gap-1 w-32">
             <label className="text-base font-medium" htmlFor="category">
-              Category
+              კატეგორია
             </label>
             <select
               id="category"
@@ -127,18 +127,18 @@ const AddProduct = () => {
               onChange={(e) => setCategory(e.target.value)}
               defaultValue={category}
             >
-              <option value="Earphone">Earphone</option>
-              <option value="Headphone">Headphone</option>
-              <option value="Watch">Watch</option>
-              <option value="Smartphone">Smartphone</option>
-              <option value="Laptop">Laptop</option>
-              <option value="Camera">Camera</option>
-              <option value="Accessories">Accessories</option>
+              <option value="ავტო ნაწილი">ავტო ნაწილი</option>
+              <option value="ავტო აქსესუარი">ავტო აქსესუარი</option>
+              <option value="ავტო ტექნიკა">ავტო ტექნიკა</option>
+              <option value="აქსესუარი">აქსესუარი</option>
+              <option value="ნაწილი">ნაწილი</option>
+              {/* <option value="Camera">Camera</option>
+              <option value="Accessories">Accessories</option> */}
             </select>
           </div>
           <div className="flex flex-col gap-1 w-32">
             <label className="text-base font-medium" htmlFor="product-price">
-              Product Price
+              ფასი
             </label>
             <input
               id="product-price"
@@ -152,7 +152,7 @@ const AddProduct = () => {
           </div>
           <div className="flex flex-col gap-1 w-32">
             <label className="text-base font-medium" htmlFor="offer-price">
-              Offer Price
+              ახლანდელი ფასი
             </label>
             <input
               id="offer-price"
@@ -166,7 +166,7 @@ const AddProduct = () => {
           </div>
         </div>
         <button type="submit" className="px-8 py-2.5 bg-orange-600 text-white font-medium rounded">
-          ADD
+          დამატება
         </button>
       </form>
       {/* <Footer /> */}
